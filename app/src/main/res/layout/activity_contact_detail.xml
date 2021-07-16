@@ -42,8 +42,8 @@
 
     <TextView
         android:id="@+id/tvContactEmail"
-        android:layout_width="74dp"
-        android:layout_height="16dp"
+        android:layout_width="215dp"
+        android:layout_height="32dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
@@ -69,9 +69,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="150dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvContactPhoneNumber"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvContactPhoneNumber"
+        app:layout_constraintTop_toBottomOf="@+id/tvContactEmail"
         app:srcCompat="@drawable/ic_baseline_local_phone_24" />
 
     <ImageView
@@ -88,9 +88,10 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="80dp"
+        android:text="Here is your message"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        tools:text="Time" />
+        app:layout_constraintTop_toBottomOf="@+id/tvContactPhoneNumber" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
