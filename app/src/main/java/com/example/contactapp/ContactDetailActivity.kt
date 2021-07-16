@@ -22,14 +22,16 @@ class ContactDetailActivity : AppCompatActivity() {
         var emailIntent = intent.getStringExtra("Email")
         var phoneNumber = intent.getStringExtra("phoneNumber")
         var imageUrl = intent.getStringExtra("imageUrl")
-            Picasso.get().load(imageUrl).into(contactImage)
+            Picasso.get()
+                .load(imageUrl)
+                .placeholder(R.drawable.avatar)
+                .into(contactImage)
 
 
 
         tvContactName.text = nameIntent
         tvContactEmail.text  = emailIntent
         tvContactPhoneNumber.text = phoneNumber
-//        imageUrl = contactImage.toString()
 
     }
 }
