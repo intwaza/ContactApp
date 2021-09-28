@@ -1,9 +1,10 @@
-package com.example.contactapp
+package com.example.contactapp.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.example.contactapp.R
 
 
 class MainActivity : AppCompatActivity() {
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     }
     fun click(){
         btnContacts.setOnClickListener {
-            var intent = Intent(baseContext,ContactActivity::class.java)
+            var intent = Intent(baseContext, ContactActivity::class.java)
             startActivity(intent)
         }
     }

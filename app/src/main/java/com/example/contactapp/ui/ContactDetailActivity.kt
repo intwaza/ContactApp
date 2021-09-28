@@ -1,9 +1,10 @@
-package com.example.contactapp
+package com.example.contactapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.contactapp.R
 import com.squareup.picasso.Picasso
 
 class ContactDetailActivity : AppCompatActivity() {
@@ -22,6 +23,7 @@ class ContactDetailActivity : AppCompatActivity() {
         var emailIntent = intent.getStringExtra("Email")
         var phoneNumber = intent.getStringExtra("phoneNumber")
         var imageUrl = intent.getStringExtra("imageUrl")
+
             Picasso.get()
                 .load(imageUrl)
                 .placeholder(R.drawable.avatar)
