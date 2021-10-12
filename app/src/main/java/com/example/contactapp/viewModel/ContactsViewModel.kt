@@ -5,10 +5,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.contactapp.models.Contact
 import com.example.contactapp.repository.ContactsRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class ContactsViewModel: ViewModel() {
-    var contactsRepository= ContactsRepository()
+@HiltViewModel
+class ContactsViewModel @Inject constructor( val contactsRepository: ContactsRepository) : ViewModel() {
     lateinit var contactsLiveData: LiveData<List<Contact>>
     lateinit var contactLiveData: LiveData<Contact>
 

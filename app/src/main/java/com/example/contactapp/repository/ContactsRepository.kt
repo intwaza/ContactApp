@@ -2,30 +2,32 @@ package com.example.contactapp.repository
 
 import androidx.lifecycle.LiveData
 import com.example.contactapp.ContactsApp
+import com.example.contactapp.database.ContactsDao
 import com.example.contactapp.database.ContactsDatabase
 import com.example.contactapp.models.Contact
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class ContactsRepository {
-    val database= ContactsDatabase.getDatabase(ContactsApp.appContext)
+class ContactsRepository @Inject constructor(val  contactsDao: ContactsDao){
+//    val database= ContactsDatabase.getDatabase(ContactsApp.appContext)
 
     suspend fun saveContact(contact: Contact){
         withContext(Dispatchers.IO){
-            database.getContactsDao().insertContact(contact)
+            contactsDao.insertContact(contact)
         }
     }
 
     fun fetchContact(): LiveData<List<Contact>>{
-        return  database.getContactsDao().getAllContacts()
+        return  contactsDao.getAllContacts()
     }
     fun getContactById(contactId: Int):LiveData<Contact>{
-        return database.getContactsDao().getContactById(contactId)
+        return contactsDao.getContactById(contactId)
 
     }
     suspend fun deleteContact(contact: Contact){
         withContext(Dispatchers.IO){
-            database.getContactsDao().deleteContact(contact)
+           contactsDao.deleteContact(contact)
         }
     }
 }

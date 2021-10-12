@@ -21,8 +21,9 @@ import com.example.contactapp.databinding.ActivityContactDetailBinding
 import com.example.contactapp.models.Contact
 import com.example.contactapp.viewModel.ContactsViewModel
 import com.squareup.picasso.Picasso
+import dagger.hilt.android.AndroidEntryPoint
 import java.io.File
-
+@AndroidEntryPoint
 class ContactDetailActivity : AppCompatActivity() {
     var contactId= 0
 
